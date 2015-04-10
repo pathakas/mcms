@@ -1,0 +1,43 @@
+SwipeIn:
+a) SmartCardId
+b) StationId
+c) StatitonName
+Validate
+
+SwipeOut:
+a) SmartCardId
+b) 
+
+Validate
+
+SwipeInOutController:
+a) GetSwipeInfo
+
+SwipeInController
+a) Get the SmartCardInfo.
+b) ValidateForMinInfo(Default)
+c) Update the TransitionInfo
+c) Response back with exception or pass.
+
+SwipeOutController
+a) Get the SmartCardInfo
+b) ValidateForMinInfo(BasedOnDaysOfWeek)
+
+SmartCard:
+SmartCardID
+SmartCardName
+Balance
+
+Station
+StationId
+StationName
+
+Transition
+SmartCardId AccountId StationSwipeInId	StationSwipeOutId
+
+Query:
+• API to get total foot-fall (swipe-in + swipe-out) for a given station.
+• API to generate a “per-card report” on demand: It should prints the following information on
+console:
+Card <number> used to travel from station <source_station> to station
+<destination_station>. Fare is Rs <x> and balance on the card is <Rs x>
