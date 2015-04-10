@@ -16,12 +16,14 @@ a) GetSwipeInfo
 SwipeInController
 a) Get the SmartCardInfo.
 b) ValidateForMinInfo(Default)
-c) Update the TransitionInfo
+c) Update the TransitionInfo(SwipeInTime)
 c) Response back with exception or pass.
 
 SwipeOutController
 a) Get the SmartCardInfo
-b) ValidateForMinInfo(BasedOnDaysOfWeek)
+b) ValidateForMinInfo(BasedOnDaysOfWeek): Raise and exception
+c) Update the TransitionInfo(SwipeOutTime)
+c) Deduct Balance and say passed
 
 SmartCard:
 SmartCardID
@@ -33,7 +35,7 @@ StationId
 StationName
 
 Transition
-SmartCardId AccountId StationSwipeInId	StationSwipeOutId
+SmartCardId StationSwipeInId	StationSwipeOutId  SwipeInTime SwipeOutTime Fare  Balance
 
 Query:
 • API to get total foot-fall (swipe-in + swipe-out) for a given station.
